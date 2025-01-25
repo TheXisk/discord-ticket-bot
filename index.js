@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { 
     Client, 
     GatewayIntentBits, 
@@ -13,7 +15,7 @@ const {
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-const TOKEN = 'MTMzMjM3OTQ0NzA1NTM1MTg2OQ.Gc5meB.VVQZv2Z4SQV2a2rE4Qy3U8P3U8xU3Km9wDH4gg';
+const TOKEN = process.env.DISCORD_TOKEN;
 const TARGET_CHANNEL_ID = '1332446681832230982'; // ID kanału, na którym wiadomość ma się pojawić
 
 client.once('ready', async () => {
